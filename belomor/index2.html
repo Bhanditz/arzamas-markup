@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=780">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>ББК</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <style>
+
+      @font-face{
+        font-family:"Formular";
+        src:url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6c1b30654c921ab2e2bfbb90e75e6a67.eot);
+        src:
+        url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6c1b30654c921ab2e2bfbb90e75e6a67.eot?#iefix) format("embedded-opentype"),
+        url(//cdn-s-assets.arzamas.academy/assets/formular-regular-9fd8e1a512bba5925ab27ebee6e78b57.woff) format("woff"),
+        url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6692bcac2cb1a573a3a01b42602b3051.ttf) format("truetype"),
+        url(//cdn-s-assets.arzamas.academy/assets/formular-regular-91fcf660e29fdb723dbaaaaf6f208bc7.svg#Formular) format("svg");
+        font-weight:normal;
+        font-style:normal
+      }
+
+      body{
+        font-family: 'Formular';
+        font-size: 14px;
+      }
+
+           .wrapper__belomor, .wrapper__belomor *, .wrapper__belomor *:before, .wrapper__belomor *:after {
+             -webkit-box-sizing: border-box;
+             -moz-box-sizing: border-box;
+             box-sizing: border-box;
+           }
+
+           .wrapper__belomor{
+             position: relative;
+             width: 950px;
+             margin: 0 auto;
+             /*padding-left: 290px;*/
+           }
+
+            .wrapper__belomor .section{
+              width: 660px;
+              margin: 0 auto;
+            }
+            .wrapper__belomor .section figure{
+              margin-left: 0;
+              margin-right: 0;
+            }
+
+            .wrapper__belomor .road__wrapper{
+              position: relative;
+              padding-left: 290px;
+            }
+
+           .wrapper__belomor .map__left{
+             position: absolute;
+             top: 50px;
+             left: 0;
+
+             width: 290px;
+             height: 600px;
+             background: url('images/new/belomor.svg') no-repeat center center #fff;
+
+             -moz-transition: top 0.4s ease;
+             -webkit-transition: top 0.4s ease;
+             -o-transition: top 0.4s ease;
+             transition: top 0.4s ease;
+
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+           }
+           .wrapper__belomor .map__left.map__left_stick{
+             position: fixed;
+             left: 50%;
+             margin-left: -475px;
+             top: 100px;
+           }
+           .wrapper__belomor .map__left.map__left_stick-disabled{
+             position: absolute;
+             top: auto;
+             left: 0;
+             margin-left: 0;
+             bottom: 50px;
+           }
+
+           .wrapper__belomor .map__left .map__path{
+             position: absolute;
+             width: 48px;
+             height: 231px;
+             background: url('images/new/bg-path.svg') no-repeat 0 0 transparent;
+             top: 114px;
+             left: 95px;
+           }
+
+           .wrapper__belomor .map__left .map__path .path__direction{
+             position: absolute;
+             left: -1px;
+             right: 0;
+             background-clip: border-box;
+             overflow: hidden;
+             height: 0;
+           }
+           .wrapper__belomor .map__left .map__path .path__direction.path__direction_there{
+             bottom: 0;
+           }
+           .wrapper__belomor .map__left .map__path .path__direction.path__direction_back{
+             top: 0;
+           }
+
+          .wrapper__belomor .map__left .map__path .path__direction img{
+            width: 48px;
+            height: 231px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .wrapper__belomor .map__left .map__path .path__direction.path__direction_there img{
+            top: auto;
+            bottom: 0;
+          }
+
+           .wrapper__belomor .map__left .map__points{
+             font-size: 12px;
+             line-height: 14px;
+             color: #262626;
+             font-weight: bold;
+           }
+           .wrapper__belomor .map__left .map__points .point__item{
+             position: absolute;
+           }
+
+           .wrapper__belomor .map__left .map__points .point__item.point__item_1{
+             top: 329px;
+             left: 63px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_2{
+             top: 306px;
+             left: 16px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_3{
+             top: 207px;
+             left: 46px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_4{
+             top: 190px;
+             left: 28px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_5{
+             top: 118px;
+             left: 45px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_6{
+             /*top: 111px;*/
+             /*left: 52px;*/
+
+             top: 95px;
+             left: 57px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_7{
+             top: 58px;
+             left: 178px;
+             width: 90px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_8{
+             top: 465px;
+             left: 130px;
+             width: 90px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_9{
+             top: 219px;
+             left: 136px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_10{
+             top: 100px;
+             left: 157px;
+             width: 90px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_11{
+             top: 22px;
+             left: 144px;
+           }
+
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality:after{
+             content: '';
+             display: block;
+             position: absolute;
+             width: 4px;
+             height: 4px;
+             border-radius: 50%;
+             background-color: #262626;
+             right: -10px;
+             bottom: -10px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality.point__item_1:after{
+             right: -9px;
+             bottom: 9px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality.point__item_2:after{
+             right: 0;
+             bottom: -5px;
+
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality.point__item_3:after{
+             right: -9px;
+             bottom: 1px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality.point__item_4:after{
+             right: -7px;
+             bottom: -4px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality.point__item_5:after{
+             right: 0;
+             bottom: -4px;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_locality.point__item_6:after{
+             right: -3px;
+             bottom: -5px;
+           }
+
+           .wrapper__belomor .map__left .map__points .point__item.point__item_geo{
+             font-style: italic;
+             color: #fff;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_geo-island{
+             font-style: normal;
+             color: #262626;
+           }
+           .wrapper__belomor .map__left .map__points .point__item.point__item_geo-blue{
+             color: #9EC9ED;
+           }
+
+           .wrapper__belomor .belomor__story{
+             color: #4c4c4c;
+           }
+           .wrapper__belomor .belomor__story .section{
+             margin-bottom: 60px;
+           }
+           .wrapper__belomor .belomor__story .section:last-child{
+             margin-bottom: 0;
+           }
+      </style>
+  </head>
+  <body>
+
+    <div class="wrapper__belomor article">
+
+      <div class="belomor__story">
+        <div class="section" data-key="0">
+            <p>Задуманный еще во&nbsp;времена Петра I&nbsp;канал, соединяющий Белое и&nbsp;Балтийское моря, был построен руками
+                советских заключенных в&nbsp;конце первой пятилетки. Чтобы не&nbsp;тратить нужные для индустриализации ресурсы,
+                строительство шло без традиционного при таких работах оборудования и&nbsp;материалов; экономия коснулась и&nbsp;питания
+                заключенных. В&nbsp;результате канал был построен менее чем за&nbsp;два года, при этом умерло, по&nbsp;разным
+                оценкам, от&nbsp;10&nbsp;до&nbsp;50&nbsp;тысяч заключенных. Проект был признан советским руководством успешным и&nbsp;положил
+                начало череде масштабных гулаговских строек.</p>
+
+            <p>17&nbsp;августа 1933 года в&nbsp;плавание по&nbsp;каналу отправился пароход, на&nbsp;котором находились 120 советских
+                писателей и&nbsp;деятелей культуры. Среди участников тура были Алексей Толстой, Всеволод Иванов, Михаил Зощенко,
+                Борис Пильняк, Леонид Леонов, Валентин Катаев, Виктор Шкловский, Мариэтта Шагинян, Вера Инбер, Илья Ильф, Евгений
+                Петров и&nbsp;другие. По&nbsp;итогам поездки писатели опять-таки в&nbsp;ударные сроки подготовили коллективную
+                монографию, в&nbsp;которой воспевали героический труд и&nbsp;волю чекистов, решившихся на&nbsp;переделку человека и&nbsp;природы.</p>
+
+            <p>Почти сразу после открытия канал пришлось углублять и&nbsp;перестраивать, потому что он&nbsp;оказался слишком мелким
+                для прохода крупных судов.</p>
+
+            <figure class="article-image article-image-primary"><img alt=""
+                                                                     src="http://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/4111/content_BBK_660_2.jpg"
+                                                                     style="width: 660px; height: 501px;"/>
+                <figcaption class="clearfix"><strong>Строительство Беломорско-Балтийского канала. 1930-е годы</strong>
+
+                    <div class="copyright">&copy; РИА &laquo;Новости&raquo;<br/>
+                        &nbsp;</div>
+                </figcaption>
+            </figure>
+
+        </div>
+
+        <div class="section" data-key="1">
+            <p>1 <strong>ПИСАТЕЛИ ВЫЕХАЛИ ИЗ МОСКВЫ</strong></p>
+
+            <p>&laquo;Вечером колонна автобусов увозит нас на&nbsp;<strong>Ленинградский вокзал.</strong> К&nbsp;перрону подан
+                специальный состав из&nbsp;мягких вагонов, сверкающих лаком, краской и&nbsp;зеркальными окнами. Рассаживаемся, где
+                кто хочет.<br/>
+                &nbsp;&nbsp; &nbsp;&nbsp;С&nbsp;той минуты, как мы&nbsp;стали гостями чекистов, для нас начался полный коммунизм.
+                Едим и&nbsp;пьем по&nbsp;потребностям, ни&nbsp;за&nbsp;что не&nbsp;платим. Копченые колбасы. Сыры. Икра. Фрукты.
+                Шоколад. Вина. Коньяк. И&nbsp;это в&nbsp;голодный год!&raquo;</p>
+
+            <p style="text-align: right;"><em>Александр Авдеенко</em></p>
+        </div>
+
+        <div class="section" data-key="2">
+            <p>2 <strong>ЛЕНИНГРАД</strong></p>
+
+            <p>&laquo;И, вообразите, литераторский поезд мчится сквозь ночь в&nbsp;Ленинград, и&nbsp;в&nbsp;названном поезде
+                восседают, лежат, спорят, кушают, выпивают прозаики и&nbsp;поэты, знаменитые и&nbsp;не&nbsp;очень, равно как и&nbsp;те,
+                кто еще никому не&nbsp;известен, но, по&nbsp;мнению Горького, вскоре будет знаменит.<br/>
+                &nbsp; &nbsp; &nbsp;Всю ночь пассажиры не&nbsp;спят, бродят друг к&nbsp;другу и&nbsp;целуются, и&nbsp;клянутся в&nbsp;бескорыстном
+                служении искусству, и&nbsp;твердят, что сколь&nbsp;бы ни&nbsp;была стопудовой писательская судьба, все&nbsp;же в&nbsp;итоге
+                побеждает талант. Даже если&nbsp;слава приходит через полсотню лет.<br/>
+                &nbsp; &nbsp; &nbsp;И&nbsp;всю ночь по&nbsp;купе разносят пиво и&nbsp;бутерброды сотрудники госбезопасности в&nbsp;чине
+                не&nbsp;меньшем, чем нынешний подполковник. И&nbsp;только под утро сочинительский поезд наконец угомонится,
+                вздремлет. И&nbsp;когда знаменательные вагоны замрут <strong>в&nbsp;Ленинграде на&nbsp;Московском вокзале</strong>,
+                к&nbsp;толпам встречающих выйдет всего лишь с&nbsp;десяток самых незначных его пассажиров в&nbsp;сопровождении тех,
+                кто разносил бутерброды и&nbsp;по&nbsp;долгу своей работы привык не&nbsp;спать по&nbsp;ночам&raquo;.</p>
+
+            <p>(Евгений Габрилович)</p>
+        </div>
+
+        <div class="road__wrapper">
+
+          <div class="map__left">
+            <div class="map__path">
+              <div class="path__direction path__direction_there">
+                <img src="images/new/bg-path-there.svg" alt="" />
+              </div>
+              <div class="path__direction path__direction_back">
+                <img src="images/new/bg-path-back.svg" alt="" />
+              </div>
+            </div>
+            <div class="map__points">
+              <div class="point__item point__item_locality point__item_1">Повенец</div>
+              <div class="point__item point__item_locality point__item_2">Медвежьегорск</div>
+              <div class="point__item point__item_locality point__item_3">Сегежа</div>
+              <div class="point__item point__item_locality point__item_4">Надвоицы</div>
+              <div class="point__item point__item_locality point__item_5">Сосновец</div>
+              <div class="point__item point__item_locality point__item_6">Беломорск</div>
+
+              <div class="point__item point__item_geo point__item_geo-island point__item_7">Соловецкие острова</div>
+
+              <div class="point__item point__item_geo point__item_8">Онежское озеро</div>
+              <div class="point__item point__item_geo point__item_geo-blue point__item_9">оз. Выгозеро</div>
+              <div class="point__item point__item_geo point__item_10">Онежский залив</div>
+              <div class="point__item point__item_geo point__item_11">Белое море</div>
+            </div>
+          </div>
+
+          <div class="section map-marker" data-key="3">
+              <p>3 <strong>НАЧАЛО ПУТИ</strong></p>
+
+              <p>&laquo;Вечером нас разместили в&nbsp;каютах судна, речного, крепко отдраенного и&nbsp;отмытого, и&nbsp;мы&nbsp;поплыли
+                  на&nbsp;север. Подполковники, разносившие в&nbsp;поезде бутерброды, отплыли с&nbsp;нами, как, впрочем, и&nbsp;их&nbsp;сослуживцы
+                  неизмеримо крупней.<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;И&nbsp;вот так и&nbsp;плыли мы&nbsp;&mdash; совесть и&nbsp;гордость русской земли&nbsp;&mdash;
+                  по&nbsp;вновь открытому Белбалтканалу от&nbsp;одного лагпункта к&nbsp;другому, и&nbsp;всюду на&nbsp;пристанях нас
+                  встречали оркестры из&nbsp;зеков и&nbsp;самые зеки в&nbsp;новеньких робах, вымытые и&nbsp;побритые, счастливые,
+                  застенчивые, лучезарные, и&nbsp;невозможно было поверить, что это и&nbsp;есть (и&nbsp;в&nbsp;немалом) именно
+                  пятьдесят восьмая статья&raquo;.</p>
+
+              <p>(Габрилович)&nbsp;</p>
+              <figure class="article-image article-image-primary"><img alt=""
+                                                                       src="http://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/4112/content_BBK_3_400.jpg"
+                                                                       style="width: 400px; height: 589px;"/>
+                  <figcaption class="clearfix"><strong>Фотография из книги &laquo;Беломорско-Балтийский канал имени Сталина. История
+                      строительства&raquo;. 1930-е годы</strong>
+
+                      <div class="copyright">&copy; raruss.ru</div>
+                  </figcaption>
+              </figure>
+          </div>
+
+          <div class="section" data-key="4">
+              <p>4 <strong>НАЧАЛО В МЕДВЕЖЬЕГОРСКЕ</strong></p>
+
+              <p>&laquo;Новый день встречаем на&nbsp;<strong>Медвежьей Горе.</strong> Низкое и&nbsp;хмурое небо. Нелетняя прохлада.
+                  Громадные валуны, покрытые толстым слоем бронзово-зеленой слизи. Рубленые, в&nbsp;два этажа, казенные дома. Белые, с&nbsp;зарешеченными
+                  окнами ряды бараков, захлестнутые гигантской петлей колючей проволоки. Это уже настоящий север.<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;На&nbsp;любые вопросы лагерники отвечали без запинки, бойко и&nbsp;весело. Да, воровали,
+                  грабили, осуждены. Отбывая срок, стали ударниками: рыли землю, рубили деревья, укладывали бетон, строили шлюзы. До&nbsp;того,
+                  как попали в&nbsp;лагерь, не&nbsp;умели держать в&nbsp;руках ни&nbsp;топора, ни&nbsp;лопаты, ни&nbsp;молотка, а&nbsp;теперь
+                  имеют разряд квалифицированного бетонщика, слесаря, механика. Были преступниками, жили за&nbsp;чужой счет, стали
+                  нормальными работягами. Вредили на&nbsp;советских заводах и&nbsp;фабриках, злобствовали, глядя на&nbsp;победоносную
+                  поступь советского народа. Теперь больно и&nbsp;стыдно вспоминать прошлое.<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;Преступник перекован в&nbsp;человека!<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;Поет хор каналоармейцев:</p>
+
+              <blockquote>
+                  <p>В&nbsp;скалах диабазовых вырубим проход.<br/>
+                      Эй, страна, заказывай с&nbsp;грузом пароход!</p>
+              </blockquote>
+
+              <p>Каналоармейский оркестр состоит из&nbsp;тридцатипятников&nbsp;&mdash; осужденных по&nbsp;35‑й статье уркаганов. Где
+                  трудно, где угрожает прорыв, туда сразу бросают оркестр. Играет. Воодушевляет. А&nbsp;когда надо, оркестранты
+                  берутся за&nbsp;кирку и&nbsp;лопату&raquo;.</p>
+
+              <p>(Авдеенко)</p>
+          </div>
+          <div class="section" data-key="5">
+              <p>5. <strong>ВЫПЛЫВАЕМ ИЗ МЕДВЕЖЬЕГОРСКА</strong></p>
+
+              <p>&laquo;В&nbsp;одном из&nbsp;бараков писатели-москвичи неожиданно увидели своего собрата,&nbsp;поэта Сергея Алымова,
+                  автора любимой народом песни &laquo;По&nbsp;долинам и&nbsp;по&nbsp;взгорьям шла дивизия вперед&raquo;. Обступили,
+                  здороваются, похлопывают по&nbsp;плечам, задают вопросы, и&nbsp;среди них неизбежный и&nbsp;самый главный: &bdquo;Как&nbsp;ты&nbsp;сюда
+                  попал, Сережа? За&nbsp;какие грехи?&ldquo; Саша Безыменский не&nbsp;удержался, чтобы не&nbsp;схохмить: &bdquo;Сережу
+                  прислали таскать тачку по&nbsp;долинам и&nbsp;по&nbsp;взгорьям&ldquo;. Все засмеялись, в&nbsp;том числе и&nbsp;Фирин.
+                  Алымов даже не&nbsp;улыбнулся. Глаза его потемнели, как туча, набухшая дождем. Пользуясь веселым и&nbsp;явно
+                  дружелюбным настроением Фирина, Безыменский сказал: &bdquo;Семен Григорьевич, не&nbsp;могу удержаться, чтобы не&nbsp;порадеть
+                  за&nbsp;собрата, попросить скостить ему срок. &bdquo;Уже скостили. Скоро Алымов вернется в&nbsp;Москву&ldquo;.
+                  Сказал и&nbsp;удалился, сославшись на&nbsp;дела. &bdquo;Сережа, так за&nbsp;что&nbsp;же ты&nbsp;все-таки попал
+                  сюда?&ldquo; &mdash;&nbsp;без дураков, серьезно спросил Безыменский. Каналоармеец Алымов махнул рукой, заплакал и&nbsp;полез
+                  на&nbsp;верхние нары.<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;Я&nbsp;был поражен тем, что и&nbsp;поэт почему-то тут, за&nbsp;колючей проволокой. Он‑то за&nbsp;что?<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;В середине дня к причалу <strong>Медвежьей Горы</strong> подошел пароход&nbsp;<br/>
+                  &bdquo;Анохин&ldquo;, тот самый, на котором недавно товарищи Сталин, Ворошилов и&nbsp;Киров предприняли путешествие
+                  по каналу. Теперь пассажирами стали мы,&nbsp;<br/>
+                  писатели.&nbsp;Длинный басовитый гудок. Отданы швартовы. Медвежьегорские&nbsp;<br/>
+                  лагерники машут руками, платками, кепками.&nbsp;<br/>
+                  &nbsp; &nbsp; &nbsp;Путешествие по водному пути начинается. Идем по Повенецкому&nbsp;<br/>
+                  заливу навстречу холодному ветру и свинцовым тучам&raquo;.&nbsp;</p>
+
+              <p>(Авдеенко)</p>
+
+          </div>
+          <div class="section map-marker" data-key="6">
+              <p>6.</p>
+
+              <p><strong>&laquo;Повенчанская лестница шлюзов.</strong> Со&nbsp;ступеньки на&nbsp;ступеньку, из&nbsp;шлюза в&nbsp;шлюз
+                  поднимаемся все выше. Все шире и&nbsp;шире разворачивается панорама Онежского края, края озер, темно-зеленых,
+                  подернутых сизой дымкой лесов, края диабазовых и&nbsp;гранитных, укутанных в&nbsp;бархатные мхи валунов, края вечной
+                  мглы, низкого неба и&nbsp;почти вечного холода. Час назад ветер хлестал мелким дождем, а&nbsp;сейчас несет хлопья
+                  сухого, нетающего снега. Снег в&nbsp;середине августа!&raquo;</p>
+
+              <p>(Авдеенко)</p>
+
+              <figure class="article-image article-image-primary"><img alt=""
+                                                                       src="http://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/4113/content_BBK_04_660.jpg"
+                                                                       style="width: 660px; height: 271px;"/>
+                  <figcaption class="clearfix"><strong>Страницы книги &laquo;Беломорско-Балтийский канал имени Сталина. История
+                      строительства&raquo;. 1934&nbsp;год</strong>
+
+                      <div class="copyright">&copy;&nbsp;raruss.ru</div>
+                  </figcaption>
+              </figure>
+
+          </div>
+          <div class="section" data-key="7">
+
+              <p>7. <strong>ГДЕ-НИБУДЬ ДАЛЬШЕ</strong></p>
+
+              <p>&laquo;&mdash; Здесь на каждом шагу упрятаны тайны. Под каждой плотиной. Под каждым шлюзом. В судьбе и
+                  работе каждого
+                  каналоармейца. Если бы судьбе было угодно омолодить меня и определить на ваше завидное место, место
+                  молодого
+                  писателя, знаете, что бы я сделал? Написал бы повесть &bdquo;Тайна трех букв&ldquo;&raquo;.&nbsp;</p>
+
+              <p>(Дмитрий Мирский)</p>
+
+          </div>
+          <div class="section map-marker" data-key="8">
+              <p>8. <strong>ВЫГОЗЕРО</strong></p>
+
+              <p>Неоглядные просторы <strong>Выгозера.</strong> Совсем холодно. Предусмотрительные чекисты извлекают из корабельных
+                  кладовых толстые, пушистые&nbsp;свитеры, раздают писателям.</p>
+
+              <p>(Авдеенко)</p>
+          </div>
+          <div class="section map-marker" data-key="9">
+              <p>9. <strong>ДЕСЯТЫЙ ШЛЮЗ</strong></p>
+
+              <p><strong>&laquo;Десятый шлюз.</strong> Он&nbsp;высечен в&nbsp;диабазовой глыбе. Фирин рассказывает, как&nbsp;день и&nbsp;ночь
+                  стрекотали здесь перфораторы. Самая крепкая, особой закалки&nbsp;сталь выдерживала не&nbsp;больше часа работы&nbsp;&mdash;
+                  перегорала. Гнезда для динамитных зарядов, чтобы взорвать скалу, пришлось просверливать чуть&nbsp;ли&nbsp;не&nbsp;на&nbsp;каждом
+                  квадратном метре&raquo;.</p>
+
+              <p>(Авдеенко)</p>
+
+
+          </div>
+          <div class="section" data-key="10">
+              <p>10. <strong>ГДЕ-НИБУДЬ ДАЛЬШЕ</strong></p>
+
+              <p>&laquo;Идем по&nbsp;каналу, вырубленному в&nbsp;граните. Последние тридцать восемь километров великого водного пути.
+                  Глубокие выемки чередуются с&nbsp;высокими утрамбованными насыпями.<br/>
+                  &nbsp;&nbsp; &nbsp;&nbsp;Тут произошел разговор с&nbsp;одним из&nbsp;инженеров, сопровождавших нас от&nbsp;Медвежьей
+                  Горы. С&nbsp;глубоким знанием дела, с&nbsp;азартом рассказывал он&nbsp;нам, как строились плотины, дамбы, шлюзы.
+                  Инженер высок, мускулист. Холодный ветер, нежаркое солнце, дождь и&nbsp;ледяная крупа грубо, до&nbsp;шершавой
+                  красноты обработали его лицо.<br/>
+                  &mdash;&nbsp;Я&nbsp;работаю на&nbsp;Беломорстрое с&nbsp;самых первых дней,&nbsp;&mdash; говорит&nbsp;он. &mdash;&nbsp;Великие
+                  трудности были преодолены и&nbsp;каналоармейцами, и&nbsp;чекистами. Чекистам было труднее. Вы&nbsp;только подумайте,
+                  в&nbsp;ходе строительства нужно было перевоспитать разнокалиберных преступников. Перековать разнузданных, оголтелых,
+                  ожесточенных разгильдяев в&nbsp;армию тружеников! Задача для титанов. &mdash;&nbsp;Он&nbsp;внимательно оглядел
+                  обступивших его писателей и&nbsp;закончил: &mdash;&nbsp;Люди делают революцию. Революция делает людей.<br/>
+                  &mdash;&nbsp;А&nbsp;что побудило вас приехать сюда, на&nbsp;север? Давно вы&nbsp;работаете с&nbsp;чекистами? Инженер
+                  молчал. Потом сказал: &mdash;&nbsp;Произошло недоразумение, товарищи. Я&nbsp;не&nbsp;вольнонаемный. Несколько лет
+                  назад я&nbsp;был осужден. Сюда попал в&nbsp;числе тысяч себе подобных. Но&nbsp;я&nbsp;привык не&nbsp;отделять себя
+                  от&nbsp;чекистов. Делаем одно дело. Работаем все по-ударному. Инженер ушел на&nbsp;безлюдную корму. Мы&nbsp;проводили
+                  его взглядами&raquo;.</p>
+
+              <p>(Авдеенко?)</p>
+
+          </div>
+          <div class="section" data-key="11">
+
+              <p>11. <strong>ДАЛЬШЕ</strong><br/>
+                  &laquo;Катаев не только насмешничает. Всем интересуется живо. При очередной беседе с Фириным спросил:&nbsp;<br/>
+                  &mdash; Скажите, Семен Григорьевич, каналоармейцы часто болели?&nbsp;<br/>
+                  &mdash; Бывало. Не без того. Человек не железный.&nbsp;<br/>
+                  &mdash; И умирали?&nbsp;<br/>
+                  &mdash; Случалось. Все мы смертные.&nbsp;<br/>
+                  &mdash; А почему мы не видели на берегах канала ни одного кладбища?&nbsp;<br/>
+                  &mdash; Потому что им здесь не место.&nbsp;<br/>
+                  Посуровел веселый и гостеприимный Фирин и отошел.&nbsp;<br/>
+                  Задумчиво глядя вслед чекисту, Катаев сказал в обычной своей&nbsp;манере:&nbsp;<br/>
+                  &mdash; Кажется, ваш покорный слуга сморозил глупость. Это со мной&nbsp;<br/>
+                  бывает. Я ведь беспартийный, не подкован, не освоил&raquo;.&nbsp;</p>
+
+              <p>(Авдеенко?)</p>
+          </div>
+          <div class="section" data-key="12">
+              <p>12. ДАЛЬШЕ<br/>
+                  &laquo;Пароход &bdquo;Анохин&ldquo; движется дальше. Проходим мимо карьера. На дне&nbsp;<br/>
+                  копошатся заключенные: дробят камень, грузят на деревянные тачки&nbsp;<br/>
+                  щебенку. Восторженный Лидин снимает шляпу, кричит:&nbsp;<br/>
+                  &mdash; Привет вам, ударники Беломорстроя! Ур-рраа!&nbsp;<br/>
+                  Ударники не откликаются. Гремят кувалдами, шаркают по щебенке&nbsp;<br/>
+                  лопатами, толкают тачки.&nbsp;<br/>
+                  Александр Архангельский насмешливо щурится на Лидина:&nbsp;<br/>
+                  &mdash; Н-да!.. Построили канал они, а радуемся мы&raquo;.&nbsp;</p>
+
+              <p>(Авдеенко)</p>
+
+              <figure class="article-image article-image-primary"><img alt=""
+                                                                       src="http://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/4114/content_BBK_5_500.jpg"
+                                                                       style="width: 500px; height: 667px;"/>
+                  <figcaption class="clearfix"><strong>Фотография из книги &laquo;Беломорско-Балтийский канал имени Сталина. История
+                      строительства&raquo;. 1930-е годы</strong>
+
+                      <div class="copyright">&copy; raruss.ru</div>
+                  </figcaption>
+              </figure>
+
+          </div>
+          <div class="section" data-key="13">
+
+              <p>13. ДАЛЬШЕ</p>
+
+               <p>&laquo;В&nbsp;общем, все было именно так, как положено, как желалось тем, кто кормил нас ночью в&nbsp;поезде
+                   бутербродами, и&nbsp;тем, кто, куда как повыше, и&nbsp;придумал весь этот художественный театр. И&nbsp;только одно
+                   обстоятельство выпирало из&nbsp;ритуала: на&nbsp;каждой из&nbsp;пристаней зеки, скандируя, требовали, чтобы на&nbsp;палубе
+                   появился Зощенко. Именно&nbsp;он, только он&nbsp;и&nbsp;никто другой из&nbsp;писателей, хотя тут, на&nbsp;судне,
+                   было навалом тех, кто руководил журналами и&nbsp;умами, кто был прославлен своим умением угадывать вкусы
+                   правительства в&nbsp;романах и&nbsp;директивных статьях. Но&nbsp;их&nbsp;имена были малоизвестны зекам, и&nbsp;те&nbsp;ревели
+                   со&nbsp;всех пристаней:<br/>
+                   &mdash;&nbsp;Зощенко, выползай!<br/>
+                   Но&nbsp;Зощенко не&nbsp;появлялся: он, правда, был юмористом, однако по&nbsp;нраву не&nbsp;слишком приветливым и&nbsp;лежал
+                   в&nbsp;каюте одетый в&nbsp;черный костюм, при галстуке, с&nbsp;четким пробором в&nbsp;волосах, как если&nbsp;бы
+                   собирался на&nbsp;встречу с&nbsp;любимой дамой&raquo;.</p>
+
+               <p>(Габрилович)</p>
+
+          </div>
+          <div class="section map-marker" data-key="14">
+              <p><strong>14. ВХОДИМ В ОНЕЖСКИЙ ЗАЛИВ</strong></p>
+
+              <p>&laquo;Пароход преодолел последние километры канала и&nbsp;вошел в&nbsp;мутно-серые, с&nbsp;фиолетовыми нефтяными
+                  пятнами <strong>воды Белого моря.</strong> Большой <strong>поселок Сорока</strong> жмется к&nbsp;берегу. Темные от&nbsp;старости
+                  бревенчатые дома. Резные наличники. С&nbsp;моря, с&nbsp;той далекой его стороны, где Соловецкие острова, дует сырой,
+                  с&nbsp;тяжелым рыбным душком ветер&raquo;.</p>
+
+              <p>(Авдеенко)</p>
+          </div>
+          <div class="section map-marker" data-key="15">
+              <p>15.&nbsp;<strong>РАЗВОРОТ</strong></p>
+
+              <p>&laquo;Двинулись в&nbsp;обратный путь, с&nbsp;севера на&nbsp;юг. Писатели, переполненные впечатлениями, уже не&nbsp;с&nbsp;такой
+                  жадностью, как прежде, вглядываются в&nbsp;берега канала&raquo;.</p>
+
+              <p>(Авдеенко)</p>
+
+          </div>
+          <div class="section" data-key="16">
+              <p>16. <strong>ВЫГОЗЕРО</strong></p>
+
+              <p>&laquo;Прошли <strong>Выгозеро.</strong> Потеплело. Стягиваем с&nbsp;себя шерстяные свитеры, выданные чекистами
+                  несколько дней назад, складываем в&nbsp;кучу. Кто-то, отвечающий за&nbsp;них, недосчитался пяти штук. Саша
+                  Безыменский сейчас же&nbsp;сочинил песенку и&nbsp;вместе со&nbsp;своими товарищами из&nbsp;агитбригады, под&nbsp;аккомпанемент
+                  гитары, лихо исполнил&nbsp;ее. Песенка имела такой<br/>
+                  припев:</p>
+
+              <blockquote>
+                  <p>Мастера пера, пера,&nbsp;<br/>
+                      возвращайте джемпера!..&raquo;&nbsp;</p>
+              </blockquote>
+
+              <p>(Авдеенко)</p>
+          </div>
+          <div class="section map-marker" data-key="17">
+              <p>17. <strong>КОНЕЦ В МЕДВЕЖЬЕГОРСКЕ</strong></p>
+
+                <p>&laquo;Закончили путешествие по каналу и переселились в поезд. Дождь с ветром смыл с провисшего неба все звезды.
+                    Дохнуло глубокой осенью, хотя еще был август. Еле-еле проступают в сырой темноте лагерные огоньки <strong>Медвежьей
+                        Горы.</strong> Все дальше они, все бледнее. Прощай, Беломорско-Балтийский! Прощайте, каналоармейцы!&raquo;&nbsp;
+                </p>
+
+                <p>(Авдеенко)</p>
+
+                <figure class="article-image article-image-primary"><img alt=""
+                                                                         src="http://cdn-s-static.arzamas.academy/uploads/ckeditor/pictures/4115/content_BBK_Book.jpg"
+                                                                         style="width: 660px; height: 471px;"/>
+                    <figcaption class="clearfix"><strong>Суперобложка книги &laquo;Беломорско-Балтийский канал имени Сталина. История
+                        строительства&raquo;. 1934 год</strong>
+
+                        <div class="copyright">&copy; raruss.ru</div>
+                    </figcaption>
+                </figure>
+          </div>
+          <div class="section" data-key="18">
+
+              <p>​18. <strong>САМЫЙ КОНЕЦ</strong></p>
+
+              <p>&laquo;Мелькнуло немало лет, и&nbsp;только теперь, когда открылось многое из&nbsp;того, за&nbsp;что ночные разносчики
+                  бутербродов ломали подследственным ребра и&nbsp;зубы, я&nbsp;до&nbsp;конца уяснил суть той прогулки по&nbsp;лагерным
+                  пунктам. Однако в&nbsp;те&nbsp;времена эти оркестры и&nbsp;перековка казались неопровержимыми, и,&nbsp;возвратившись
+                  с&nbsp;канала в&nbsp;Москву, мы&nbsp;вновь собрались у&nbsp;Горького, чтобы&nbsp;составить книгу о&nbsp;Белбалтлаге.
+                  И&nbsp;писали очерки в&nbsp;эту книгу с&nbsp;таким проницанием в&nbsp;суть всего доброго в&nbsp;человеке, в&nbsp;его
+                  сердце и&nbsp;мысли, что у&nbsp;творца &bdquo;Челкаша&ldquo; при чтении проступали слезы. Впрочем, насколько я&nbsp;знаю,
+                  он&nbsp;вообще легко поддавался слезам&raquo;.</p>
+
+              <p>(Габрилович)</p>
+          </div>
+
+        </div>
+
+        <div class="section section__letters" data-key="19">
+            <p>Письма писателей начальнику Секретно-оперативного управления ОГПУ Генриху Ягоде</p>
+
+            <p>Всеволод Иванов, писатель<br/>
+                &laquo;Милый Генрих Григорьевич,<br/>
+                поспешно, на бегу поезда, чужой ручкой &mdash; Вл. Лидина, крепко-крепко благодарю Вас за великолепную мысль,
+                позволившую нам увидать Б.-Б. канал. Страшно жаль, что не удалось мне увидать его раньше, весной, когда предлагали
+                Вы.<br/>
+                Целую Вас крепко&raquo;.</p>
+
+            <p>Михаил Зощенко, писатель&nbsp;<br/>
+                &laquo;Дело не в том, что я видел грандиозные сооружения &mdash; плотины, шлюзы, дамбы и новый водный путь.<br/>
+                Меня больше всего поразили люди, которые там работали и которые организовали эту работу.<br/>
+                Мне не приходилось раньше видеть ГПУ в роли воспитателя &mdash; и то, что я увидел, было для меня чрезвычайно
+                радостным&raquo;.&nbsp;<br/>
+                Мих. Зощенко</p>
+
+            <p>Кукрыниксы<br/>
+                &laquo;Тов. Ягода!<br/>
+                Мы, Кукрыниксы, работая как художники-сатирики, избираем мишенью людей с &bdquo;родимыми пятнами&ldquo; прошлого.
+                Этих людей мы бичуем. Если Ваша работа будет проходить такими темпами и все эти люди изменят свой внутренний
+                облик &mdash; нам тогда скоро придется &bdquo;перековаться&ldquo; на другую профессию.<br/>
+                Восхищены грандиозной работой ОГПУ!&raquo;<br/>
+                Художники Кукрыниксы: Куприянов, Крылов, Соколов</p>
+
+            <p>Александр Безыменский, поэт<br/>
+                &laquo;Товарищу Ягоде<br/>
+                от поэта, с гордостью носящего присвоенное ему<br/>
+                враждебной нам прессой всех стран имя литературного чекиста</p>
+
+            <p><strong>Донесение</strong><br/>
+                Я сообщаю героической Чека,<br/>
+                Что грандиозность Беломорского канала<br/>
+                И мысль вождя, что жизнь ему давала,<br/>
+                Войдут невиданной поэмою в века,</p>
+
+            <p>И если коллективом вдохновений<br/>
+                Поэму Беломорского пути<br/>
+                Сумеем мы в литературу донести,<br/>
+                То это будет лучшее из наших донесений&raquo;.</p>
+
+            <p>Лев Никулин, писатель<br/>
+                &laquo;Генриху Григорьевичу Ягоде.<br/>
+                &bdquo;Человечность&ldquo; и &bdquo;гуманность&ldquo; все же великие слова, и, мне кажется, не надо отказываться от
+                них. Высшая человечность и гуманность есть то, что сделано Вами &mdash; первым из строителей ББК. Она заключается в
+                замечательной работе над исправлением человека. Она заключается в заботе о создании лучших условий жизни для
+                трудящегося человечества. Всякая иная человечность и&nbsp;гуманность есть ложь, лицемерие и ложь&raquo;.</p>
+
+            <p>Николай Чуковский, писатель, переводчик<br/>
+                &laquo;Я был в Карелии несколько лет назад. Блуждая по безмерным пространствам диких каменистых пустынь, я думал о
+                том, сколько надо еще поколений, чтобы этот край стал обжитым, чтобы подчинились человеку эти леса и воды.<br/>
+                Я был не прав. Я не знал тогда, что труд, организованный большевиками, может за двадцать месяцев преобразить страну
+                и людей&raquo;.</p>
+
+            <p>Александр Исбах, писатель, литературовед<br/>
+                &laquo;Беломоро-Балтийский канал кажется мне высеченным в граните грандиозным памятником нашей великой партии и ее
+                вождю Сталину.<br/>
+                Большевики-чекисты, ученики Феликса Дзержинского &mdash; Ягода, Фирин и&nbsp;их&nbsp;боевые соратники &mdash;
+                претворили в жизнь великий замысел вождя.<br/>
+                Они &mdash; люди ленинской породы &mdash; сумели подчинить стихию, сумели вернуть к&nbsp;трудовой жизни тысячи
+                людей.<br/>
+                Об этом сразу не напишешь. Трудно написать книгу, достойную Беломорстроя. Трудно, но почетно. Это должна быть книга
+                о жестоких боях, о борьбе и&nbsp;победе, книга о воспитании правдой, книга о большевиках-чекистах, о нашей славной
+                партии, имеющей таких вождей и таких бойцов&raquo;.</p>
+
+            <p>Лев Кассиль, писатель<br/>
+                &laquo;Смешно н фальшиво было бы сусально расписывать лагерную жизнь. Огромная, суровая и прекрасная, но трудная,
+                тяжелая, железная правда лежит в&nbsp;основе всех дел ОГПУ. Ее поняли бывшие воры и вредители, люди всех статей
+                Уголовного кодекса. Ее необходимо понять писателям&raquo;.<br/>
+                Литературная газета,&nbsp;29 августа 1933 года&nbsp;</p>
+
+            <p>Воспоминание Виктора Шкловского:<br/>
+                &laquo;По разрешению Ягоды, с его письмом я ездил на Беломор, на свидание с&nbsp;братом, сидевшим в лагере. Письмо
+                Ягоды сделало лагерное начальство очень предупредительным, за мной ухаживали. Когда я уезжал, спросили: &bdquo;Как
+                вы&nbsp;себя у нас чувствовали?&ldquo; Огражденный от неприятностей письмом Ягоды, я&nbsp;ответил: &bdquo;Как живая
+                черно-бурая лиса в меховом магазине&ldquo;. Они застонали...&raquo;&thinsp;<span class="end-of-text">&nbsp;</span>
+            </p>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+        $(function(){
+
+          var belomorMapRoad = {
+            roadPoints: {
+              there: [3, 6, 8, 9, 14],
+              back: [15, 17],
+              therePointStart: 0,
+              backPointStart: 0
+            },
+            direction: 'there',
+            pathHeight: {
+              there: 0,
+              back: 0
+            }
+          };
+
+          var prevScroll = 0;
+          function onBelomorScroll(){
+            var scrolled = $(document).scrollTop(),
+                direction = scrolled <= prevScroll ? 'up' : 'down',
+                belomorRoadHeight = $('.wrapper__belomor .road__wrapper').outerHeight();
+
+            if(scrolled >= $('.wrapper__belomor .road__wrapper').offset().top){
+              if(scrolled + $('.map__left').outerHeight() + 100 >= $('.wrapper__belomor .road__wrapper').offset().top + belomorRoadHeight - 50){
+                $('.map__left').addClass('map__left_stick-disabled');
+              }else{
+                $('.map__left').addClass('map__left_stick').removeClass('map__left_stick-disabled');
+              }
+            }else{
+              $('.map__left').removeClass('map__left_stick').removeClass('map__left_stick-disabled');
+            }
+
+            if(scrolled > $('[data-key="0"]').offset().top){
+              if(belomorMapRoad.roadPoints.therePointStart == 0 && scrolled >= $('[data-key="2"]').offset().top){
+                belomorMapRoad.roadPoints.therePointStart = scrolled;
+              }
+
+              if(scrolled > $('[data-key="2"]').offset().top && scrolled <= $('[data-key="14"]').offset().top){
+                belomorMapRoad.pathHeight.there = ((scrolled - belomorMapRoad.roadPoints.therePointStart) / ($('[data-key="14"]').offset().top - belomorMapRoad.roadPoints.therePointStart)) * 100;
+                if(belomorMapRoad.pathHeight.there > 100){
+                  belomorMapRoad.pathHeight.there = 100;
+                }
+
+                belomorMapRoad.direction = 'there';
+                $('.path__direction_there').css({
+                  height: belomorMapRoad.pathHeight.there +'%'
+                });
+
+                belomorMapRoad.pathHeight.back = 0;
+                $('.path__direction_back').css({
+                  height: belomorMapRoad.pathHeight.back +'%'
+                });
+              }else{
+                if(scrolled >= $('[data-key="14"]').offset().top) {
+                  if (belomorMapRoad.roadPoints.backPointStart == 0) {
+                    belomorMapRoad.roadPoints.backPointStart = scrolled;
+                  }
+
+                  belomorMapRoad.pathHeight.back = ((scrolled - belomorMapRoad.roadPoints.backPointStart) / ($('[data-key="18"]').offset().top - belomorMapRoad.roadPoints.backPointStart)) * 100;
+                  if(belomorMapRoad.pathHeight.back > 100){
+                    belomorMapRoad.pathHeight.back = 100;
+                  }
+                  belomorMapRoad.direction = 'back';
+                  $('.path__direction_back').css({
+                    height: belomorMapRoad.pathHeight.back + '%'
+                  });
+                }
+              }
+            }else{
+              if(direction == 'up'){
+                belomorMapRoad.pathHeight.there = 0;
+                $('.path__direction_there').css({
+                  height: belomorMapRoad.pathHeight.there +'%'
+                })
+              }
+            }
+
+            prevScroll = scrolled;
+          }
+
+          setTimeout(function(){
+            onBelomorScroll();
+          }, 500);
+
+          $(window).bind('scroll', function(e){
+            onBelomorScroll();
+          });
+        });
+    </script>
+  </body>
+</html>

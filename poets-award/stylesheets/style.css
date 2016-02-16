@@ -1,0 +1,306 @@
+@import "common.css";
+
+@font-face{
+  font-family:"Formular";
+  src:url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6c1b30654c921ab2e2bfbb90e75e6a67.eot);
+  src:
+    url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6c1b30654c921ab2e2bfbb90e75e6a67.eot?#iefix) format("embedded-opentype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-regular-9fd8e1a512bba5925ab27ebee6e78b57.woff) format("woff"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6692bcac2cb1a573a3a01b42602b3051.ttf) format("truetype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-regular-91fcf660e29fdb723dbaaaaf6f208bc7.svg#Formular) format("svg");
+  font-weight:normal;
+  font-style:normal
+}
+
+@font-face{
+  font-family:"Formular";
+  src: url(//cdn-s-assets.arzamas.academy/assets/formular-medium-71976e6c93d3091bb73c3c57382e51db.eot);
+  src:
+    url(//cdn-s-assets.arzamas.academy/assets/formular-medium-71976e6c93d3091bb73c3c57382e51db.eot?#iefix) format("embedded-opentype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-medium-bb1b063433a0bc8a8d789d1c23c0f7cc.woff) format("woff"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-medium-c15a80a64a419342260420e1ab1bb842.ttf) format("truetype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-medium-b68a1be8771df335ef80c005acf4c90a.svg#Formular-Medium) format("svg");
+  font-weight:500;
+  font-style:normal
+}
+
+@font-face{
+  font-family:"Formular";
+  src: url(//cdn-s-assets.arzamas.academy/assets/formular-bold-9f1b92d505d57be5945abbedc232c16c.eot);
+  src:
+    url(//cdn-s-assets.arzamas.academy/assets/formular-bold-9f1b92d505d57be5945abbedc232c16c.eot?#iefix) format("embedded-opentype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-bold-9b50c9615047f3be0b372ad3a2fcb0eb.woff) format("woff"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-bold-db5d043efe16639fd7b76035b62ef52e.ttf) format("truetype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-bold-30dfed5ae39dfb9e4b381a406804c3c0.svg#Formular-Bold) format("svg");
+  font-weight: bold;
+  font-style:normal
+}
+
+@font-face{
+  font-family:"Formular";
+  src: url(//cdn-s-assets.arzamas.academy/assets/formular-black-1f4261065c40aeeb03b1c917584affe8.eot);
+  src:
+    url(//cdn-s-assets.arzamas.academy/assets/formular-black-1f4261065c40aeeb03b1c917584affe8.eot?#iefix) format("embedded-opentype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-black-53c6da485e9642e668f6f12307818425.woff) format("woff"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-black-eda7bdf47fff94c668f78a41d203908c.ttf) format("truetype"),
+    url(//cdn-s-assets.arzamas.academy/assets/formular-black-694eb78408f8479240787d53c1042392.svg#Formular-Black) format("svg");
+  font-weight:800;
+  font-style:normal
+}
+
+body, html{
+  height: 100%;
+  min-height: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+body{
+  font: normal 15px "Formular", sans-serif;
+}
+
+.writer__awards{
+  position: relative;
+  width: 950px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.writer__awards .writer__awards_title{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
+
+.writer__awards .cup__block{
+  padding: 20px;
+  width: 140px;
+  border: solid 1px #c8c8c8;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.writer__awards .cup__block.cup__block_stick{
+  position: fixed;
+  left: 50%;
+  margin-left: -475px;
+  top: 100px;
+}
+.writer__awards .cup__block.cup__block_stick.cup__block_stick-disabled{
+  position: absolute;
+  top: auto;
+  left: auto;
+  margin-left: 0;
+  bottom: 50px;
+}
+
+.writer__awards .cup__block .cup__container{
+  margin-bottom: 20px;
+}
+.writer__awards .cup__block .cup__container:last-child{
+  margin-bottom: 0;
+}
+
+.writer__awards .cup__block .cup__item{
+  cursor: pointer;
+  text-align: center;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.writer__awards .cup__container .cup__item.cup__complete{
+  border: solid 2px #262626;
+  color: #4c4c4c;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.writer__awards .cup__container .cup__item.cup__complete:hover{
+  background: none #e5e5e5;
+}
+
+.writer__awards .cup__container .cup__item.cup__complete.cup__disabled{
+  border: solid 2px #bdbdbd;
+  color: #c9c9c9;
+  cursor: default;
+}
+.writer__awards .cup__container .cup__item.cup__complete.cup__disabled:hover{
+  background: none transparent;
+}
+
+.writer__awards .cup__container .cup__writer{
+  text-align: center;
+  width: 98px;
+}
+.writer__awards .cup__container .cup__writer .writer__place{
+  font-size: 17px;
+  font-weight: bold;
+}
+.writer__awards .cup__container .cup__writer .writer__title{
+  font-size: 15px;
+  margin-top: 5px;
+  line-height: 18px;
+}
+
+.writer__awards .writers__container{
+  padding-left: 145px;
+}
+.writer__awards .writers__container .writers__container_selected{
+  display: none;
+}
+
+.writer__awards .writers__container .writer__item{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 20px 15px;
+  width: 250px;
+}
+.writer__awards .writers__container .writer__item .writer__image img{
+  max-width: 100%;
+  display: block;
+}
+.writer__awards .writers__container .writer__item .writer__title{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+/****************/
+.writer__awards.writer__awards_completed .writer__awards_title{
+  display: block;
+  margin-bottom: 35px;
+}
+
+.writer__awards.writer__awards_completed .writers__container{
+  padding-left: 60px;
+  padding-right: 80px;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected{
+  display: block;
+}
+
+.writer__awards.writer__awards_completed .cup__block,
+.writer__awards.writer__awards_completed .writer__item{
+  display: none;
+}
+
+/* writers__container_selected */
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item{
+  display: inline-block;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item .writer__image{
+  position: relative;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item.writer__item_selected .writer__image:after{
+  content: '';
+  display: block;
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item.writer__item_place-1 .writer__image:after{
+  width: 90px;
+  height: 89px;
+  background: url('../images/cups/ico-cup-1.png') no-repeat 0 0 transparent;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item.writer__item_place-2 .writer__image:after{
+  width: 65px;
+  height: 65px;
+  background: url('../images/cups/ico-cup-2.png') no-repeat 0 0 transparent;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item.writer__item_place-3 .writer__image:after{
+  width: 63px;
+  height: 83px;
+  background: url('../images/cups/ico-cup-3.png') no-repeat 0 0 transparent;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item.writer__item_place-4 .writer__image:after{
+  width: 44px;
+  height: 62px;
+  background: url('../images/cups/ico-cup-4.png') no-repeat 0 0 transparent;
+}
+.writer__awards.writer__awards_completed .writers__container .writers__container_selected .writer__item.writer__item_place-5 .writer__image:after{
+  width: 44px;
+  height: 43px;
+  background: url('../images/cups/ico-cup-5.png') no-repeat 0 0 transparent;
+}
+
+/* share */
+.writer__awards .writers__container .writer__item.writer__item_result{
+  display: none;
+  text-align: center;
+  padding-top: 60px;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__reset{
+  display: inline-block;
+  border: solid 2px #262626;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 18px 34px;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__reset:hover{
+  background: none #e5e5e5;
+}
+
+.writer__awards .writers__container .writer__item.writer__item_result .award__share{
+  margin-top: 40px;
+  padding: 0 2px;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share .test-share-info{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #4c4c4c;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list {
+  display: inline-block;
+  border-right: 1px solid #262626;
+  padding: 0;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social {
+  float: left;
+  margin: 0;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social a {
+  font-family: Formular;
+  font-size: 13px;
+  height: 60px;
+  padding-top: 30px;
+  display: block;
+  border: 1px solid #262626;
+  border-right: 0;
+  width: 60px;
+  position: relative;
+  color: #222;
+  text-align: center;
+  text-decoration: none;
+}
+
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social a:before {
+  content: "";
+  background-image: url(//cdn-x.arzamas.academy/125-avangard-Un0cySk0iK2Vig6pYlt4ot5nA/654/img/i-social-dark.png);
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -9px;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social.social-vk a:before {
+  background-position: 0 -18px;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social.social-fb a:before {
+  background-position: 0 0;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social.social-od a:before {
+  background-position: 0 -54px;
+}
+.writer__awards .writers__container .writer__item.writer__item_result .award__share .share ul.share-list li.social.social-tw a:before {
+  background-position: 0 -36px;
+}

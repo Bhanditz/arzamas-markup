@@ -1,0 +1,265 @@
+@font-face{
+  font-family:"Formular";
+  src:url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6c1b30654c921ab2e2bfbb90e75e6a67.eot);
+  src:
+  url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6c1b30654c921ab2e2bfbb90e75e6a67.eot?#iefix) format("embedded-opentype"),
+  url(//cdn-s-assets.arzamas.academy/assets/formular-regular-9fd8e1a512bba5925ab27ebee6e78b57.woff) format("woff"),
+  url(//cdn-s-assets.arzamas.academy/assets/formular-regular-6692bcac2cb1a573a3a01b42602b3051.ttf) format("truetype"),
+  url(//cdn-s-assets.arzamas.academy/assets/formular-regular-91fcf660e29fdb723dbaaaaf6f208bc7.svg#Formular) format("svg");
+  font-weight:normal;
+  font-style:normal
+}
+
+@font-face{
+  font-family: "Lava 3";
+  src: url("https://s3-eu-west-1.amazonaws.com/arzamas-fonts/v2/fonts/WF-024344-008038-001181.eot");
+  src:
+    url("https://s3-eu-west-1.amazonaws.com/arzamas-fonts/v2/fonts/WF-024344-008038-001181.eot?#iefix") format("embedded-opentype"),
+    url("https://s3-eu-west-1.amazonaws.com/arzamas-fonts/v2/fonts/WF-024344-008038-001181.woff") format("woff"),
+    url("https://s3-eu-west-1.amazonaws.com/arzamas-fonts/v2/fonts/WF-024344-008038-001181.ttf") format("truetype"),
+    url("https://s3-eu-west-1.amazonaws.com/arzamas-fonts/v2/fonts/WF-024344-008038-001181.svg#typotheque_webfonts_service") format("svg");
+  font-style:Normal;
+  font-weight:400;
+  font-stretch:normal;
+}
+
+body{
+  font-family: 'Formular';
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper__slot-machine, .wrapper__slot-machine *, .wrapper__slot-machine *:before, .wrapper__slot-machine *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.page__header{
+  text-align: center;
+  font: bold 30px/90px 'Lava 3', serif;
+  border-bottom: solid 1px #d9d9d9;
+}
+
+.wrapper__slot-machine{
+  width: 950px;
+  margin: 0 auto;
+}
+.wrapper__slot-machine .slot-machine__block{
+  position: relative;
+  width: 740px;
+  height: 609px;
+  margin: 100px auto 50px;
+  padding: 282px 40px 0;
+}
+.wrapper__slot-machine .slot-machine__block:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 434px;
+  background: url('../images/bg-machine-top.png') no-repeat 0 0 transparent;
+  background-size: 100%;
+  z-index: 3;
+}
+.wrapper__slot-machine .slot-machine__block:after{
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 175px;
+  background: url('../images/bg-machine-bottom.png') no-repeat 0 0 transparent;
+  background-size: 100%;
+  z-index: 1;
+}
+
+.wrapper__slot-machine .machine__handle{
+  position: absolute;
+  width: 88px;
+  height: 288px;
+  background: url('../images/sprite-handle.png') no-repeat 0 0 transparent;
+  background-size: cover;
+  right: -80px;
+  top: 90px;
+  cursor: pointer;
+}
+.wrapper__slot-machine .machine__handle.machine__handle_1{
+  background-position: -88px 0;
+}
+.wrapper__slot-machine .machine__handle.machine__handle_2{
+  background-position: -176px 0;
+}
+.wrapper__slot-machine .machine__handle.machine__handle_3{
+  background-position: -264px 0;
+}
+.wrapper__slot-machine .machine__handle.machine__handle_4{
+  background-position: -352px 0;
+}
+
+
+.wrapper__slot-machine .machine__image_head{
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: url('../images/sprite-goose.png') no-repeat 0 0 transparent;
+  background-size: cover;
+  left: 50%;
+  margin-left: -90px;
+  top: -58px;
+  z-index: 11;
+}
+.wrapper__slot-machine .machine__image_head.machine__image_head_active, .wrapper__slot-machine .machine__image_head:hover{
+  background-position: -180px 0;
+}
+
+.wrapper__slot-machine .machine__label{
+  position: absolute;
+  left: 50%;
+  margin-left: -280px;
+  top: 72px;
+  width: 560px;
+  height: 113px;
+  background: url('../images/machine-label.png') no-repeat 0 0 transparent;
+  background-size: 100%;
+  z-index: 11;
+
+  font-size: 36px;
+  font-family: 'Lava 3';
+  text-align: center;
+  font-weight: bold;
+  line-height: 77px;
+}
+
+.wrapper__slot-machine .machine__lights{
+  position: absolute;
+  width: 680px;
+  height: 205px;
+  left: 50%;
+  margin-left: -340px;
+  top: 20px;
+  background: url('../images/sprite-lights.png') no-repeat 0 0 transparent;
+  background-size: 100%;
+  z-index: 10;
+}
+.wrapper__slot-machine .machine__lights.machine__lights_1{
+  background-position: 0 -205px;
+}
+.wrapper__slot-machine .machine__lights.machine__lights_2{
+  background-position: 0 -410px;
+}
+.wrapper__slot-machine .machine__lights.machine__lights_3{
+  background-position: 0 -615px;
+}
+
+.wrapper__slot-machine .slots__container{
+  display: table;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+.wrapper__slot-machine .slot__item{
+  display: table-cell;
+  width: 220px;
+  height: 125px;
+  padding-top: 13px;
+  background: url('../images/bg-slot.png') no-repeat 0 0 transparent;
+  background-size: 100%;
+  vertical-align: top;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+}
+.wrapper__slot-machine .slot__item .slot__item_container{
+  height: 82px;
+  overflow: hidden;
+}
+.wrapper__slot-machine .slot__item ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.wrapper__slot-machine .slot__item ul li{
+  line-height: 82px;
+}
+
+.wrapper__slot-machine .machine__paper-share{
+  position: absolute;
+  left: 50%;
+  bottom: 175px;
+  width: 388px;
+  margin-left: -194px;
+  padding: 30px 40px;
+  border: solid 4px #000;
+  background: none #fff;
+  color: #000;
+  z-index: 2;
+  display: none;
+}
+.wrapper__slot-machine .machine__paper-share.machine__paper-rotateFall {
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-animation: rotateFall 1s both ease-in;
+  animation: rotateFall 1s both ease-in;
+}
+
+.wrapper__slot-machine .machine__paper-share .share__title{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Lava 3';
+}
+.wrapper__slot-machine .machine__paper-share .share__block{
+  padding-top: 20px;
+}
+.wrapper__slot-machine .machine__paper-share .share__block .sub__title{
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+.wrapper__slot-machine .machine__paper-share .share__block .socials__list{
+  padding-top: 15px;
+  text-align: center;
+}
+.wrapper__slot-machine .machine__paper-share .share__block .socials__list .social__item{
+  display: inline-block;
+  vertical-align: middle;
+  border-right: solid 1px #d9d9d9;
+  text-align: center;
+}
+.wrapper__slot-machine .machine__paper-share .share__block .socials__list .social__item:last-child{
+  border-right: medium none;
+}
+
+.wrapper__slot-machine .machine__paper-share .share__block .socials__list .social__item a{
+  padding: 10px 20px;
+  display: block;
+}
+.wrapper__slot-machine .machine__paper-share .share__block .socials__list .social__item a img{
+  vertical-align: middle;
+  width: 50%;
+}
+
+
+/* fall */
+
+@-webkit-keyframes rotateFall {
+  0% { -webkit-transform: rotateZ(0deg); }
+  20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
+  40% { -webkit-transform: rotateZ(17deg); }
+  60% { -webkit-transform: rotateZ(16deg); }
+  100% { -webkit-transform: translateY(100%) rotateZ(17deg);}
+}
+@keyframes rotateFall {
+  0% { -webkit-transform: rotateZ(0deg); transform: rotateZ(0deg); }
+  20% { -webkit-transform: rotateZ(10deg); transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
+  40% { -webkit-transform: rotateZ(17deg); transform: rotateZ(17deg); }
+  60% { -webkit-transform: rotateZ(16deg); transform: rotateZ(16deg); }
+  100% { -webkit-transform: translateY(100%) rotateZ(17deg); transform: translateY(100%) rotateZ(17deg);}
+}
